@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
   end
 
   def new
+    @company = Company.find_by({ "id" => params["company_id"] })
     # render contacts/new view with new Contact form
   end
 
@@ -29,5 +30,5 @@ class ContactsController < ApplicationController
     # redirect user
     redirect_to "/companies/#{@contact["company_id"]}"
   end
-  
+
 end
